@@ -8,7 +8,8 @@ function RSVPForm() {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
-    contributionType: ''
+    contributionType: '',
+    foodType: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -24,7 +25,8 @@ function RSVPForm() {
           {
             name: formData.name,
             phone: formData.phone,
-            contribution_type: formData.contributionType
+            contribution_type: formData.contributionType,
+            foodType: formData.foodType
           }
         ]);
 
@@ -129,6 +131,19 @@ function RSVPForm() {
                   <span>R$ 20,00</span>
                 </label>
               </div>
+            </div>
+            <div>
+              <label htmlFor="phone" className="block text-sm font-medium text-yellow-100 mb-2">
+                Qual prato irá levar?
+              </label>
+              <input
+                type="tel"
+                id="foodType"
+                required
+                className="w-full px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-yellow-300" 
+                value={formData.foodType}
+                onChange={(e) => setFormData(prev => ({ ...prev, foodType: e.target.value }))}
+              />
             </div>
 
             <button

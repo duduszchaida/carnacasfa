@@ -16,11 +16,11 @@ function Home() {
         <div className="max-w-3xl w-full bg-white/10 backdrop-blur-lg rounded-2xl p-8 shadow-2xl border border-white/20">
           <div className="text-center mb-8">
             <img 
-              src="https://cdn.pixabay.com/photo/2018/12/07/08/47/castle-3861025_960_720.png" 
+              src="https://imgur.com/H8bIQHt.jpg" 
               alt="Disney Castle"
               className="w-48 h-auto mx-auto mb-6 drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]"
             />
-            <Sparkles className="w-12 h-12 mx-auto mb-4 text-yellow-300" />
+          
             <h1 className="text-4xl md:text-5xl font-bold mb-4 text-yellow-300">
               Carnaval Mágico Disney
             </h1>
