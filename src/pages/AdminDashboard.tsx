@@ -169,21 +169,7 @@ function AdminDashboard() {
         )}
       </div>
 
-      {/* Disney Characters */}
-      <div className="fixed bottom-0 left-0 w-40 h-40">
-        <img 
-          src="https://imgur.com/kNx4qG9.png" 
-          alt="Mickey Mouse"
-          className="w-full h-full object-contain"
-        />
-      </div>
-      <div className="fixed bottom-0 right-0 w-40 h-40">
-        <img 
-          src="https://imgur.com/WQ4yrZA.png" 
-          alt="Minnie Mouse"
-          className="w-full h-full object-contain"
-        />
-      </div>
+      
     </div>
   );
 }
