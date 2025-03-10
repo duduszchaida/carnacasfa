@@ -9,13 +9,22 @@ function RSVPForm() {
     name: '',
     costumeParticipation: '',
     contributionType: '',
-    foodType: ''
+    foodType: '',
+    groupSize: 0,
+    music: '' // Agora é um número
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Validação adicional para o tamanho do grupo
+    if (formData.costumeParticipation === 'group' && formData.groupSize < 2) {
+      alert('A quantidade de pessoas no grupo deve ser maior que 0.');
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
@@ -26,7 +35,9 @@ function RSVPForm() {
             name: formData.name,
             contribution_type: formData.contributionType,
             costume_participation: formData.costumeParticipation,
-            food_type: formData.foodType
+            food_type: formData.foodType,
+            group_size: formData.groupSize, // Envia como número
+            music: formData.music
           }
         ]);
 
@@ -39,7 +50,6 @@ function RSVPForm() {
       setIsSubmitting(false);
     }
   };
-
   if (submitted) {
     return (
       <div className="min-h-screen bg-gradient-to-b from-purple-600 via-blue-500 to-purple-800 text-white flex items-center justify-center">
@@ -62,7 +72,7 @@ function RSVPForm() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-purple-600 via-blue-500 to-purple-800 text-white overflow-hidden relative">
       {/* Toy Story no canto superior direito */}
-      <div className="absolute top-4 right-3 w-48 transform -rotate-12 z-10">
+      <div className="absolute top-8 right-3 w-48 transform -rotate-12 z-10">
         <img 
           src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/db9ed8c9-b18e-40d7-9b96-eb34d64138e6/dfmlvjg-2e67acfd-86a5-41f2-b3aa-9a68200e328c.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2RiOWVkOGM5LWIxOGUtNDBkNy05Yjk2LWViMzRkNjQxMzhlNlwvZGZtbHZqZy0yZTY3YWNmZC04NmE1LTQxZjItYjNhYS05YTY4MjAwZTMyOGMucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.fz4iBvVXg02KS02bs_ST7b0fnkO4F_WmrIgHyy0_5ME" 
           alt="toy story"
@@ -81,7 +91,7 @@ function RSVPForm() {
 
       {/* Formulário */}
       <div className="relative min-h-screen flex items-center justify-center px-4 py-12">
-        <div className="max-w-md w-full bg-white/10 backdrop-blur-lg rounded-2xl p-8 shadow-2xl border border-white/20 relative z-9 mt-[20px] mb-[105px]">
+        <div className="max-w-md w-full bg-white/10 backdrop-blur-lg rounded-2xl p-8 shadow-2xl border border-white/20 relative z-9 mt-[24px] mb-[105px]">
           <button
             onClick={() => navigate('/')}
             className="mb-6 text-yellow-200 hover:text-yellow-300 flex items-center gap-2"
@@ -134,19 +144,49 @@ function RSVPForm() {
                   />
                   <span>Desfile em Grupo</span>
                 </label>
-                <label className="flex items-center space-x-3">
-                  <input
-                    type="radio"
-                    name="costumeParticipation"
-                    value="none"
-                    className="form-radio text-yellow-400"
-                    onChange={(e) => setFormData(prev => ({ ...prev, costumeParticipation: e.target.value }))}
-                  />
-                  <span>Não vou participar do desfile</span>
-                </label>
+                
               </div>
             </div>
 
+            {/* Campo para quantidade de pessoas no grupo */}
+            {formData.costumeParticipation === 'group' && (
+              <div>
+                <label htmlFor="groupSize" className="block text-sm font-medium text-yellow-100 mb-2">
+                  Quantidade de pessoas no grupo
+                </label>
+                <input
+                  type="number"
+                  id="groupSize"
+                  required
+                  min="1"
+                  className="w-full px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-yellow-300"
+                  placeholder="Digite a quantidade de pessoas"
+                  value={formData.groupSize}
+                  onChange={(e) => {
+                    const value = parseInt(e.target.value, 10);
+                    if (value >= 1) {
+                      setFormData(prev => ({ ...prev, groupSize: value }));
+                    } else {
+                      setFormData(prev => ({ ...prev, groupSize: 0 }));
+                    }
+                  }}
+                />
+              </div>
+            )}
+             <div>
+    <label htmlFor="music" className="block text-sm font-medium text-yellow-100 mb-2">
+      Música do Desfile
+    </label>
+    <input
+      type="text"
+      id="music"
+      required
+      className="w-full px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-yellow-300"
+      placeholder="Digite a música do desfile"
+      value={formData.music}
+      onChange={(e) => setFormData(prev => ({ ...prev, music: e.target.value }))}
+    />
+  </div>
             <div>
               <label className="block text-sm font-medium text-yellow-100 mb-2">
                 Forma de Contribuição
