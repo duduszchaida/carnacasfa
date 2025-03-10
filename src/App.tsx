@@ -53,7 +53,7 @@ function Home() {
                 <img src="https://images.vexels.com/content/192938/preview/treasure-map-detailed-drawing-illustration-5df87e.png" className="w-12 h-12 mx-auto mb-2 text-yellow-300" />
                 <h2 className="text-xl font-semibold mb-2">Local</h2>
                 <p>Sede da familia Blum</p>
-                <p>Rua das ....</p>
+                <p>Rua Ana Martins Smaha, 202</p>
               </div>
             </div>
 
