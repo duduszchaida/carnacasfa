@@ -32,7 +32,14 @@ function AdminDashboard() {
         .order('created_at', { ascending: false });
 
       if (error) throw error;
-      setResponses(data || []);
+
+      // Substitui null por 'não pago'
+      const formattedData = data?.map((response) => ({
+        ...response,
+        pagamento: response.pagamento || 'não pago',
+      })) || [];
+
+      setResponses(formattedData);
     } catch (error) {
       console.error('Error fetching responses:', error);
       alert('Erro ao carregar as respostas. Por favor, tente novamente.');
@@ -133,22 +140,22 @@ function AdminDashboard() {
                     <td className="py-3 px-4">{response.group_size || '-'}</td>
                     <td className="py-3 px-4">{response.music || '-'}</td>
                     <td className="py-3 px-4">
-  <select
-    value={response.pagamento || 'não pago'}
-    onChange={(e) => handlePaymentStatusChange(response.id, e.target.value)}
-    className={`
-      bg-transparent border rounded-lg px-3 py-1 text-sm focus:outline-none focus:ring-2 transition-all
-      ${
-        response.pagamento === 'pago'
-          ? 'border-green-500 text-green-500 hover:bg-green-500/10 focus:ring-green-500'
-          : 'border-red-500 text-red-500 hover:bg-red-500/10 focus:ring-red-500'
-      }
-    `}
-  >
-    <option value="pago" className="bg-green-500 text-white">Pago</option>
-    <option value="não pago" className="bg-red-500 text-white">Não Pago</option>
-  </select>
-</td>
+                      <select
+                        value={response.pagamento || 'não pago'}
+                        onChange={(e) => handlePaymentStatusChange(response.id, e.target.value)}
+                        className={`
+                          bg-transparent border rounded-lg px-3 py-1 text-sm focus:outline-none focus:ring-2 transition-all
+                          ${
+                            response.pagamento === 'pago'
+                              ? 'border-green-500 text-green-500 hover:bg-green-500/10 focus:ring-green-500'
+                              : 'border-red-500 text-red-500 hover:bg-red-500/10 focus:ring-red-500'
+                          }
+                        `}
+                      >
+                        <option value="pago" className="bg-green-500 text-white">Pago</option>
+                        <option value="não pago" className="bg-red-500 text-white">Não Pago</option>
+                      </select>
+                    </td>
                     <td className="py-3 px-4">{formatDate(response.created_at)}</td>
                   </tr>
                 ))}
