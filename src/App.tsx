@@ -1,6 +1,5 @@
 import React from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
-import { Music } from 'lucide-react';
 import RSVPForm from './pages/RSVPForm';
 
 function Home() {
@@ -31,8 +30,8 @@ function Home() {
               Você está convidado para nossa festa encantada!
             </p>
             <div className="flex items-center justify-center space-x-2 text-yellow-200">
-              <Music className="w-5 h-5" />
-              <p className="text-lg">Onde a magia encontra a folia</p>
+              
+              <p className="text-lg">Prepara sua fantasia e chame seus amigos</p>
             </div>
           </div>
 

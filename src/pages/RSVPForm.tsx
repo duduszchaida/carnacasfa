@@ -60,29 +60,28 @@ function RSVPForm() {
   }
 
   return (
-    <div className="h-[110vh] bg-gradient-to-b from-purple-600 via-blue-500 to-purple-800 text-white">
-      {/* Pluto in top right corner */}
-      <div className="mr-[20px] absolute top-0 right-0 w-32 h-32 transform -rotate-12 z-10">
+    <div className="min-h-screen bg-gradient-to-b from-purple-600 via-blue-500 to-purple-800 text-white overflow-hidden relative">
+      {/* Toy Story no canto superior direito */}
+      <div className="absolute top-8 right-3 w-48 transform -rotate-12 z-10">
         <img 
           src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/db9ed8c9-b18e-40d7-9b96-eb34d64138e6/dfmlvjg-2e67acfd-86a5-41f2-b3aa-9a68200e328c.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2RiOWVkOGM5LWIxOGUtNDBkNy05Yjk2LWViMzRkNjQxMzhlNlwvZGZtbHZqZy0yZTY3YWNmZC04NmE1LTQxZjItYjNhYS05YTY4MjAwZTMyOGMucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.fz4iBvVXg02KS02bs_ST7b0fnkO4F_WmrIgHyy0_5ME" 
-          alt="Pluto"
-          className="max-w-[120%] w-[120%] h-[120%] object-contain drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]"
+          alt="toy story"
+          className="w-full h-full object-contain drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]"
         />
       </div>
 
-      {/* Disney Characters at bottom */}
-      
-      <div className="pt-[6rem] absolute bottom-0 right-0 w-40 h-40 z-10" >
+      {/* Carros no canto inferior direito */}
+      <div className="absolute bottom-6 right-4 w-40 h-40 z-10">
         <img 
           src="https://imagensgratis.com/wp-content/uploads/2022/07/carros-da-disney-png-83.png" 
-          alt="Minnie Mouse"
-          className=" h-[120px] w-[90%]  object-contain"
+          alt="carros"
+          className="w-full h-full object-contain"
         />
       </div>
 
-      <div className="relative min-h-screen container mx-auto px-4 py-12 flex flex-col items-center justify-center">
-        
-        <div className="max-w-md w-full bg-white/10 backdrop-blur-lg rounded-2xl p-8 shadow-2xl border border-white/20">
+      {/* Formulário */}
+      <div className="relative min-h-screen flex items-center justify-center px-4 py-12">
+        <div className="max-w-md w-full bg-white/10 backdrop-blur-lg rounded-2xl p-8 shadow-2xl border border-white/20 relative z-9">
           <button
             onClick={() => navigate('/')}
             className="mb-6 text-yellow-200 hover:text-yellow-300 flex items-center gap-2"
@@ -123,7 +122,7 @@ function RSVPForm() {
                     className="form-radio text-yellow-400"
                     onChange={(e) => setFormData(prev => ({ ...prev, costumeParticipation: e.target.value }))}
                   />
-                  <span>Competição Individual</span>
+                  <span>Desfile Individual</span>
                 </label>
                 <label className="flex items-center space-x-3">
                   <input
@@ -133,7 +132,7 @@ function RSVPForm() {
                     className="form-radio text-yellow-400"
                     onChange={(e) => setFormData(prev => ({ ...prev, costumeParticipation: e.target.value }))}
                   />
-                  <span>Competição em Grupo</span>
+                  <span>Desfile em Grupo</span>
                 </label>
                 <label className="flex items-center space-x-3">
                   <input
@@ -143,7 +142,7 @@ function RSVPForm() {
                     className="form-radio text-yellow-400"
                     onChange={(e) => setFormData(prev => ({ ...prev, costumeParticipation: e.target.value }))}
                   />
-                  <span>Não vou participar da competição</span>
+                  <span>Não vou participar do desfile</span>
                 </label>
               </div>
             </div>
