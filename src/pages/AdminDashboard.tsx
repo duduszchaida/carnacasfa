@@ -133,15 +133,22 @@ function AdminDashboard() {
                     <td className="py-3 px-4">{response.group_size || '-'}</td>
                     <td className="py-3 px-4">{response.music || '-'}</td>
                     <td className="py-3 px-4">
-                      <select
-                        value={response.pagamento || 'não pago'}
-                        onChange={(e) => handlePaymentStatusChange(response.id, e.target.value)}
-                        className="bg-transparent border border-white/20 rounded-lg px-2 py-1 text-yellow-100"
-                      >
-                        <option value="pago">Pago</option>
-                        <option value="não pago">Não Pago</option>
-                      </select>
-                    </td>
+  <select
+    value={response.pagamento || 'não pago'}
+    onChange={(e) => handlePaymentStatusChange(response.id, e.target.value)}
+    className={`
+      bg-transparent border rounded-lg px-3 py-1 text-sm focus:outline-none focus:ring-2 transition-all
+      ${
+        response.pagamento === 'pago'
+          ? 'border-green-500 text-green-500 hover:bg-green-500/10 focus:ring-green-500'
+          : 'border-red-500 text-red-500 hover:bg-red-500/10 focus:ring-red-500'
+      }
+    `}
+  >
+    <option value="pago" className="bg-green-500 text-white">Pago</option>
+    <option value="não pago" className="bg-red-500 text-white">Não Pago</option>
+  </select>
+</td>
                     <td className="py-3 px-4">{formatDate(response.created_at)}</td>
                   </tr>
                 ))}
