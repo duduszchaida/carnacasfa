@@ -43,7 +43,7 @@ function RSVPForm() {
   if (submitted) {
     return (
       <div className="min-h-screen bg-gradient-to-b from-purple-600 via-blue-500 to-purple-800 text-white flex items-center justify-center">
-        <div className="max-w-md w-full bg-white/10 backdrop-blur-lg rounded-2xl p-8 shadow-2xl border border-white/20 text-center">
+        <div className="max-w-md w-full bg-white/10 backdrop-blur-lg rounded-2xl p-8 shadow-2xl border border-white/20 text-center ">
           <CheckCircle className="w-16 h-16 mx-auto mb-4 text-green-400" />
           <h2 className="text-2xl font-bold mb-4">Presença Confirmada!</h2>
           <p className="mb-6">Obrigado por confirmar sua presença. Mal podemos esperar para celebrar com você!</p>
@@ -81,7 +81,7 @@ function RSVPForm() {
 
       {/* Formulário */}
       <div className="relative min-h-screen flex items-center justify-center px-4 py-12">
-        <div className="max-w-md w-full bg-white/10 backdrop-blur-lg rounded-2xl p-8 shadow-2xl border border-white/20 relative z-9">
+        <div className="max-w-md w-full bg-white/10 backdrop-blur-lg rounded-2xl p-8 shadow-2xl border border-white/20 relative z-9 mb-[105px]">
           <button
             onClick={() => navigate('/')}
             className="mb-6 text-yellow-200 hover:text-yellow-300 flex items-center gap-2"
