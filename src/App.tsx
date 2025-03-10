@@ -52,7 +52,7 @@ function Home() {
               <div className="bg-white/5 p-6 rounded-xl border border-white/10 md:col-span-2">
                 <img src="https://images.vexels.com/content/192938/preview/treasure-map-detailed-drawing-illustration-5df87e.png" className="w-12 h-12 mx-auto mb-2 text-yellow-300" />
                 <h2 className="text-xl font-semibold mb-2">Local</h2>
-                <p>Sede da familia Blum</p>
+                <p>Sede da família Blum</p>
                 <p>Rua Ana Martins Smaha, 202</p>
               </div>
             </div>
