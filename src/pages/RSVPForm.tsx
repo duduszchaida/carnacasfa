@@ -62,7 +62,7 @@ function RSVPForm() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-purple-600 via-blue-500 to-purple-800 text-white overflow-hidden relative">
       {/* Toy Story no canto superior direito */}
-      <div className="absolute top-8 right-3 w-48 transform -rotate-12 z-10">
+      <div className="absolute top-4 right-3 w-48 transform -rotate-12 z-10">
         <img 
           src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/db9ed8c9-b18e-40d7-9b96-eb34d64138e6/dfmlvjg-2e67acfd-86a5-41f2-b3aa-9a68200e328c.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2RiOWVkOGM5LWIxOGUtNDBkNy05Yjk2LWViMzRkNjQxMzhlNlwvZGZtbHZqZy0yZTY3YWNmZC04NmE1LTQxZjItYjNhYS05YTY4MjAwZTMyOGMucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.fz4iBvVXg02KS02bs_ST7b0fnkO4F_WmrIgHyy0_5ME" 
           alt="toy story"
@@ -81,7 +81,7 @@ function RSVPForm() {
 
       {/* Formulário */}
       <div className="relative min-h-screen flex items-center justify-center px-4 py-12">
-        <div className="max-w-md w-full bg-white/10 backdrop-blur-lg rounded-2xl p-8 shadow-2xl border border-white/20 relative z-9 mb-[105px]">
+        <div className="max-w-md w-full bg-white/10 backdrop-blur-lg rounded-2xl p-8 shadow-2xl border border-white/20 relative z-9 mt-[20px] mb-[105px]">
           <button
             onClick={() => navigate('/')}
             className="mb-6 text-yellow-200 hover:text-yellow-300 flex items-center gap-2"
