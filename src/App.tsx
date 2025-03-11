@@ -2,6 +2,7 @@ import React from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import RSVPForm from './pages/RSVPForm';
 import AdminDashboard from './pages/AdminDashboard';
+import Cartao from './pages/Cartao';
 
 function Home() {
   const navigate = useNavigate();
@@ -96,6 +97,7 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/confirmar" element={<RSVPForm />} />
       <Route path="/admin" element={<AdminDashboard />} />
+      <Route path="/cartao" element={<Cartao />} />
     </Routes>
   );
 }
