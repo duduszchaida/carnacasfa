@@ -67,7 +67,7 @@ function Home() {
                   <li>• Venha fantasiado como seu personagem favorito</li>
                   <li>• Prêmio para a melhor fantasia Individual</li>
                   <li>• Prêmio para a melhor fantasia em grupo (limite de 5 pessoas)</li>
-                  <li>• Não esqueça do prato de comida e/ou o valor da entrada </li>
+                  <li>• Não esqueça do prato de comida, a roupa para doação e/ou o valor da entrada </li>
                 </ul>
               </div>
             </div>
