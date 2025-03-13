@@ -196,12 +196,22 @@ function RSVPForm() {
                   <input
                     type="radio"
                     name="contribution"
-                    value="10_reais_e_prato"
+                    value="5_reais_e_prato_e_roupa"
                     required
                     className="form-radio text-yellow-400"
                     onChange={(e) => setFormData(prev => ({ ...prev, contributionType: e.target.value }))}
                   />
-                  <span>R$ 10,00 + Um prato de comida</span>
+                  <span>R$ 5,00 + Um prato de comida + Doação de roupa</span>
+                </label>
+                <label className="flex items-center space-x-3">
+                  <input
+                    type="radio"
+                    name="contribution"
+                    value="10_reais_e_roupa"
+                    className="form-radio text-yellow-400"
+                    onChange={(e) => setFormData(prev => ({ ...prev, contributionType: e.target.value }))}
+                  />
+                  <span>R$ 10,00 + Doação de Roupa</span>
                 </label>
                 <label className="flex items-center space-x-3">
                   <input
@@ -211,12 +221,12 @@ function RSVPForm() {
                     className="form-radio text-yellow-400"
                     onChange={(e) => setFormData(prev => ({ ...prev, contributionType: e.target.value }))}
                   />
-                  <span>R$ 20,00</span>
+                  <span>R$ 20,00 </span>
                 </label>
               </div>
             </div>
 
-            {formData.contributionType === '10_reais_e_prato' && (
+            {formData.contributionType === '5_reais_e_prato_e_roupa' && (
               <div>
                 <label htmlFor="foodType" className="block text-sm font-medium text-yellow-100 mb-2">
                   Qual prato irá levar?
