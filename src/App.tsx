@@ -48,7 +48,7 @@ function Home() {
               <div className="bg-white/5 p-6 rounded-xl border border-white/10">
                 <img src="https://res.cloudinary.com/dirlqtqgk/image/upload/v1741630159/mcvrvtkw7oqfhekyocvc.png" className="w-10  mx-auto mb-2 text-yellow-300" />
                 <h2 className="text-xl font-semibold mb-2">Horário</h2>
-                <p>A partir das 17h</p>
+                <p>A partir das 19h</p>
               </div>
 
               <div className="bg-white/5 p-6 rounded-xl border border-white/10 md:col-span-2">
